@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-export const TaskList = () => {
+export const TaskList = (props) => {
 
 
     const [tasks, setTasks] = useState([
@@ -19,7 +19,7 @@ export const TaskList = () => {
 
   return (
     <>
-    <h1>Task Lists</h1>
+    <h1>Task Lists {props.title} - {props.subtitle}</h1>
       <ul>
         <button onClick={ () => setShow(!show)} className='trigger'>TOGGLE</button>
         { show && tasks.map( (task) => (

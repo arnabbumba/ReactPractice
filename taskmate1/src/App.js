@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <TaskList/>
+      <TaskList title="Random" subtitle="Putu"/>
     </div>
   );
 }
