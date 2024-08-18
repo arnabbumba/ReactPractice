@@ -7,8 +7,10 @@ function App() {
   const [tasks, setTasks] = useState([
     {id: 1234 , name: "Putu", status: true},
     {id: 4321 , name: "Putu1", status: false},
-    {id: 9876 , name: "Putu2", status: true}
+    {id: 9876 , name: "Putu2", status: false}
   ]);
+
+  const [show, setShow] = useState(true);
 
 function handleDelete(id){
 //console.log(id);
@@ -20,9 +22,10 @@ function handleDelete(id){
     <div className="App">
       <h1>Task Lists</h1>
       <ul>
-        { tasks.map( (task) => (
-          <li key={task.id}>
-            <span>{task.id} - {task.name} - {task.status}</span>
+        <button onClick={ () => setShow(!show)} className='trigger'>TOGGLE</button>
+        { show && tasks.map( (task) => (
+          <li key={task.id} className={task.status ? 'completed' : 'incomplete'}>
+            <span>{task.id} - {task.name}</span>
             <button onClick={ () => handleDelete(task.id)} className='delete'>DELETE</button>
           </li>
         ))}
