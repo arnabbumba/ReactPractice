@@ -1,3 +1,4 @@
+//Display one List and delete the id after clicking the delete button
 import { useState } from 'react';
 import './App.css';
 
